@@ -24,6 +24,8 @@ dependencies:
   flutter:
     sdk: flutter
   card_swiper: ^1.0.2
+  http: ^0.13.3
+  provider: ^5.0.0
 
 
   # The following adds the Cupertino Icons font to your application.
