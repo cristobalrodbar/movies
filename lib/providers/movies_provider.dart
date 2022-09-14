@@ -7,6 +7,7 @@ class MoviesProvider extends ChangeNotifier {
   String _apiKey = '6f891a475dee383c23561cb57dffed82';
   String _baseUrl = 'https://api.themoviedb.org';
   String _language = 'es-ES';
+  List<Movie> onDisplayMovies = [];
 
   MoviesProvider() {
     print('movies provider init');
@@ -22,6 +23,8 @@ class MoviesProvider extends ChangeNotifier {
     final response = await http.get(url);
     final nowPlayingResponse = NowPlayingResponse.fromJson(response.body);
     //final Map<String, dynamic> decodedData = json.decode(response.body);
-    print(nowPlayingResponse.results[0].title);
+    //print(nowPlayingResponse.results[0].title);
+    onDisplayMovies = nowPlayingResponse.results;
+    notifyListeners();
   }
 }
