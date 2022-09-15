@@ -10,6 +10,14 @@ class CardSwiper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    if(this.movies.length == 0){
+      return Container(
+        width: double.infinity,
+        height: size.height*0.5,
+        child: Center(child: CircularProgressIndicator()),
+      )
+    }
+
     return Container(
       width: double.infinity,
       height: size.height * 0.5,
