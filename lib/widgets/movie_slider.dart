@@ -62,7 +62,7 @@ class _MovieSliderState extends State<MovieSlider> {
           Expanded(
             child: ListView.builder(
                 controller: scrollController,
-                scrollDirection: Axis.vertical,
+                scrollDirection: Axis.horizontal,
                 itemCount: widget.movies.length,
                 itemBuilder: (_, int index) =>
                     _MoviePoster(widget.movies[index])),
@@ -84,12 +84,12 @@ class _MoviePoster extends StatelessWidget {
       //color: Colors.green,
       width: 130,
       height: 260,
-      margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      margin: EdgeInsets.symmetric(horizontal: 10),
       child: Column(
         children: [
           GestureDetector(
-            onTap: () => Navigator.pushNamed(context, 'details',
-                arguments: 'movie-instance'),
+            onTap: () =>
+                Navigator.pushNamed(context, 'details', arguments: movie),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20),
               child: FadeInImage(
